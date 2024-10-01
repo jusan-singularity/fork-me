@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
-
-curl -s https://stepik.org:443/api/course-lists\?page\=1 | jq
+curl -s https://stepik.org:443/api/course-lists\?page\=1 | ./jq.exe --raw-output '."course-lists"[].title'
